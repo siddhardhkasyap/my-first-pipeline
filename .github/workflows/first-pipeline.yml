@@ -1,0 +1,28 @@
+name: My First Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:  # This lets you run it manually!
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Say hello
+        run: echo "Hello! This is my first GitHub Actions pipeline!"
+      
+      - name: Show date and time
+        run: date
+      
+      - name: Show system information
+        run: |
+          echo "Running on:"
+          uname -a
+      
+      - name: List files
+        run: ls -la
