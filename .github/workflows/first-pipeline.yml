@@ -23,6 +23,12 @@ jobs:
         run: |
           echo "Running on:"
           uname -a
+          
+      - name: Create a file
+        run: echo "This file was created by GitHub Actions!" > output.txt
       
+      - name: Show file content
+        run: cat output.txt
+        
       - name: List files
         run: ls -la
